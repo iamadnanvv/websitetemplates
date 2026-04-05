@@ -1,7 +1,49 @@
+<!DOCTYPE html>
 <html lang="en"><head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Sarah Jenkins | Cardiologist</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Dr. Sarah Jenkins, licensed clinical psychologist. Individual and couples therapy, CBT, anxiety and mood support—in Seattle and online.">
+    <title>Dr. Sarah Jenkins | Clinical Psychologist</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "#psychologist",
+          "name": "Dr. Sarah Jenkins",
+          "jobTitle": "Clinical Psychologist",
+          "description": "Licensed clinical psychologist providing evidence-based therapy for individuals and couples.",
+          "worksFor": { "@id": "#practice" }
+        },
+        {
+          "@type": "MedicalClinic",
+          "@id": "#practice",
+          "name": "Dr. Sarah Jenkins Psychology Practice",
+          "medicalSpecialty": "Psychotherapy",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "450 Wellness Center Blvd, Suite 302",
+            "addressLocality": "Seattle",
+            "addressRegion": "WA",
+            "postalCode": "98104",
+            "addressCountry": "US"
+          },
+          "telephone": "+1-555-123-4567",
+          "email": "hello@drjenkinspsychology.com"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "#webpage",
+          "name": "Dr. Sarah Jenkins | Clinical Psychologist",
+          "description": "Practice website for Dr. Sarah Jenkins, clinical psychologist.",
+          "about": { "@id": "#psychologist" },
+          "mainEntity": { "@id": "#psychologist" }
+        }
+      ]
+    }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,441 +67,512 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #94a3b8;
         }
+        html {
+            scroll-behavior: smooth;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+        }
+        @supports (padding: max(0px)) {
+            .safe-top {
+                padding-top: max(0px, env(safe-area-inset-top));
+            }
+        }
+        .skip-link {
+            position: absolute;
+            left: 0.75rem;
+            top: 0.75rem;
+            z-index: 100;
+            padding: 0.5rem 1rem;
+            background: #0f172a;
+            color: #fff;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border-radius: 0.375rem;
+            transform: translateY(-120%);
+            transition: transform 0.2s ease;
+        }
+        .skip-link:focus {
+            transform: translateY(0);
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+        }
     </style>
 </head>
-<body class="bg-white text-slate-600 antialiased font-light selection:bg-blue-100 selection:text-blue-900">
+<body class="bg-white text-slate-600 antialiased font-light selection:bg-blue-100 selection:text-blue-900 min-h-screen overflow-x-hidden">
 
-    <!-- Navigation -->
-    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="#" class="text-xl font-medium tracking-tighter text-slate-900 flex items-center gap-2">
-                <div class="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-sm">
-                    SJ
-                </div>
-                DR.JENKINS
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- [SITE REGION: GLOBAL HEADER · PRIMARY NAV] -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 safe-top">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 min-h-[3.5rem] sm:min-h-16 flex items-center justify-between gap-3 py-2 sm:py-0">
+            <a href="#top" class="text-lg sm:text-xl font-medium tracking-tighter text-slate-900 flex items-center gap-2 shrink-0 min-h-[44px]" aria-label="Dr. Jenkins Psychology — home">
+                DR. JENKINS
             </a>
             
-            <nav class="hidden md:flex items-center gap-8 text-sm font-normal">
-                <a href="#about" class="hover:text-slate-900 transition-colors">About</a>
-                <a href="#services" class="hover:text-slate-900 transition-colors">Services</a>
-                <a href="#testimonials" class="hover:text-slate-900 transition-colors">Testimonials</a>
-                <a href="#clinic" class="hover:text-slate-900 transition-colors">Clinic Info</a>
+            <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-normal" aria-label="Primary">
+                <a href="#top" class="hover:text-slate-900 transition-colors py-2">Home</a>
+                <a href="#about" class="hover:text-slate-900 transition-colors py-2">About</a>
+                <a href="#services" class="hover:text-slate-900 transition-colors py-2">Services</a>
+                <a href="#testimonials" class="hover:text-slate-900 transition-colors py-2">Testimonials</a>
+                <a href="#clinic" class="hover:text-slate-900 transition-colors py-2">Office</a>
             </nav>
 
-            <div class="flex items-center gap-4">
-                <a href="#appointment" class="hidden md:inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-slate-900 rounded-md hover:bg-slate-800 transition-colors">
-                    Book Consultation
+            <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+                <a href="#appointment" class="hidden md:inline-flex items-center justify-center px-4 py-2.5 text-sm font-medium text-white bg-slate-900 rounded-md hover:bg-slate-800 transition-colors min-h-[44px]">
+                    Book a session
                 </a>
-                <button class="md:hidden text-slate-900 flex items-center">
-                    <iconify-icon icon="solar:hamburger-menu-linear" width="24" height="24"></iconify-icon>
+                <button type="button" id="menuToggle" class="md:hidden inline-flex items-center justify-center min-h-[44px] min-w-[44px] rounded-md text-slate-900 hover:bg-slate-100 transition-colors -mr-1" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+                    <iconify-icon id="menuIconOpen" icon="solar:hamburger-menu-linear" width="24" height="24"></iconify-icon>
+                    <iconify-icon id="menuIconClose" class="hidden" icon="solar:close-circle-linear" width="24" height="24"></iconify-icon>
                 </button>
             </div>
         </div>
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden border-t border-slate-100 bg-white/95 backdrop-blur-md shadow-lg shadow-slate-200/40">
+            <nav class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1" aria-label="Mobile primary">
+                <a href="#top" class="mobile-nav-link py-3 px-2 text-base font-normal text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-md transition-colors">Home</a>
+                <a href="#about" class="mobile-nav-link py-3 px-2 text-base font-normal text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-md transition-colors">About</a>
+                <a href="#services" class="mobile-nav-link py-3 px-2 text-base font-normal text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-md transition-colors">Services</a>
+                <a href="#testimonials" class="mobile-nav-link py-3 px-2 text-base font-normal text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-md transition-colors">Testimonials</a>
+                <a href="#clinic" class="mobile-nav-link py-3 px-2 text-base font-normal text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-md transition-colors">Office</a>
+                <a href="#appointment" class="mobile-nav-link mt-2 inline-flex items-center justify-center py-3.5 px-4 text-sm font-medium text-white bg-slate-900 rounded-md hover:bg-slate-800 transition-colors">Book a session</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative pt-24 pb-32 overflow-hidden">
+    <main id="main-content">
+    <!-- [SITE REGION: IA / WIRE MAP — in-page navigation] -->
+    <nav class="border-b border-dashed border-slate-200 bg-slate-50/90" aria-label="Page map — jump to section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-3.5">
+            <ol class="flex flex-wrap gap-x-1 gap-y-2 sm:gap-2 list-none m-0 p-0 text-[11px] sm:text-xs font-mono text-slate-600">
+                <li class="flex items-center after:content-['/'] after:text-slate-300 after:mx-1.5 last:after:content-none">
+                    <a href="#top" class="px-2 py-1 rounded border border-transparent hover:border-slate-300 hover:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/30">01 · Intro</a>
+                </li>
+                <li class="flex items-center after:content-['/'] after:text-slate-300 after:mx-1.5 last:after:content-none">
+                    <a href="#about" class="px-2 py-1 rounded border border-transparent hover:border-slate-300 hover:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/30">02 · About</a>
+                </li>
+                <li class="flex items-center after:content-['/'] after:text-slate-300 after:mx-1.5 last:after:content-none">
+                    <a href="#services" class="px-2 py-1 rounded border border-transparent hover:border-slate-300 hover:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/30">03 · Services</a>
+                </li>
+                <li class="flex items-center after:content-['/'] after:text-slate-300 after:mx-1.5 last:after:content-none">
+                    <a href="#testimonials" class="px-2 py-1 rounded border border-transparent hover:border-slate-300 hover:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/30">04 · Stories</a>
+                </li>
+                <li class="flex items-center">
+                    <a href="#clinic" class="px-2 py-1 rounded border border-transparent hover:border-slate-300 hover:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/30">05 · Office + Book</a>
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- [SITE REGION: HERO · VALUE PROP] -->
+    <section id="top" aria-labelledby="hero-heading" class="relative pt-16 sm:pt-20 lg:pt-24 pb-16 sm:pb-24 lg:pb-32 overflow-hidden">
         <div class="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-50/50 via-white to-white"></div>
-        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-            <div class="max-w-2xl">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-medium mb-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <div class="max-w-2xl order-2 lg:order-1">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-medium mb-4 sm:mb-6">
                     <span class="relative flex h-2 w-2">
                       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                       <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
                     </span>
-                    Accepting New Patients
+                    Accepting new clients
                 </div>
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-slate-900 leading-tight mb-6">
-                    Compassionate care for your <span class="text-blue-600">heart health.</span>
+                <h1 id="hero-heading" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-slate-900 leading-tight mb-4 sm:mb-6">
+                    A calmer mind starts with <span class="text-blue-600">the right support.</span>
                 </h1>
-                <p class="text-lg text-slate-500 mb-8 leading-relaxed font-normal">
-                    Board-certified cardiologist combining advanced medical expertise with a patient-first approach. Dedicated to preventing and treating cardiovascular conditions.
+                <p class="text-base sm:text-lg text-slate-500 mb-6 sm:mb-8 leading-relaxed font-normal">
+                    Licensed clinical psychologist offering evidence-based therapy for anxiety, mood, stress, and relationships—in a confidential, judgment-free space.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#appointment" class="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors shadow-sm shadow-blue-600/20">
-                        Book an Appointment
+                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                    <a href="#appointment" class="inline-flex items-center justify-center px-6 py-3.5 sm:py-3 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 active:bg-blue-800 transition-colors shadow-sm shadow-blue-600/20 min-h-[48px]">
+                        Request a session
                     </a>
-                    <a href="#services" class="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-slate-700 bg-white border border-slate-200 rounded-md hover:bg-slate-50 transition-colors">
-                        View Services
+                    <a href="#services" class="inline-flex items-center justify-center px-6 py-3.5 sm:py-3 text-sm font-medium text-slate-700 bg-white border border-slate-200 rounded-md hover:bg-slate-50 active:bg-slate-100 transition-colors min-h-[48px]">
+                        View therapy services
                     </a>
                 </div>
                 
-                <div class="mt-12 flex items-center gap-8 pt-8 border-t border-slate-100">
+                <dl class="mt-8 sm:mt-12 flex flex-wrap items-center gap-6 sm:gap-8 pt-6 sm:pt-8 border-t border-slate-100 m-0">
                     <div>
-                        <p class="text-2xl font-medium text-slate-900 tracking-tight">15+</p>
-                        <p class="text-xs text-slate-500 mt-1">Years Experience</p>
+                        <dt class="sr-only">Years of experience</dt>
+                        <dd class="m-0">
+                            <p class="text-2xl font-medium text-slate-900 tracking-tight">15+</p>
+                            <p class="text-xs text-slate-500 mt-1">Years Experience</p>
+                        </dd>
                     </div>
                     <div>
-                        <p class="text-2xl font-medium text-slate-900 tracking-tight">5k+</p>
-                        <p class="text-xs text-slate-500 mt-1">Patients Treated</p>
+                        <dt class="sr-only">Clients supported</dt>
+                        <dd class="m-0">
+                            <p class="text-2xl font-medium text-slate-900 tracking-tight">5k+</p>
+                            <p class="text-xs text-slate-500 mt-1">Sessions held</p>
+                        </dd>
                     </div>
                     <div>
-                        <div class="flex items-center text-blue-600 gap-1 text-lg">
-                            <iconify-icon icon="solar:star-bold" width="20" height="20"></iconify-icon>
-                            <iconify-icon icon="solar:star-bold" width="20" height="20"></iconify-icon>
-                            <iconify-icon icon="solar:star-bold" width="20" height="20"></iconify-icon>
-                            <iconify-icon icon="solar:star-bold" width="20" height="20"></iconify-icon>
-                            <iconify-icon icon="solar:star-bold" width="20" height="20"></iconify-icon>
-                        </div>
-                        <p class="text-xs text-slate-500 mt-1">5.0 Patient Rating</p>
+                        <dt class="sr-only">Patient rating</dt>
+                        <dd class="m-0">
+                            <div class="flex items-center text-blue-600 gap-1 text-lg" aria-hidden="true">
+                                <iconify-icon icon="solar:star-bold" width="20" height="20"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold" width="20" height="20"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold" width="20" height="20"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold" width="20" height="20"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold" width="20" height="20"></iconify-icon>
+                            </div>
+                            <p class="text-xs text-slate-500 mt-1"><span class="sr-only">5.0 out of 5 stars. </span>5.0 Client feedback</p>
+                        </dd>
                     </div>
-                </div>
+                </dl>
             </div>
-            <div class="relative">
+            <div class="relative order-1 lg:order-2 w-full max-w-md mx-auto lg:max-w-none lg:mx-0">
                 <!-- Abstract placeholder for doctor image to maintain clean look -->
-                <div class="aspect-[4/5] bg-slate-100 rounded-2xl overflow-hidden relative">
+                <div class="aspect-[4/5] max-h-[min(70vh,28rem)] lg:max-h-none bg-slate-100 rounded-2xl overflow-hidden relative">
                     <div class="absolute inset-0 bg-gradient-to-tr from-slate-200 to-slate-50"></div>
                     <!-- Silhouette/Icon placeholder -->
                     <div class="absolute inset-0 flex items-center justify-center text-slate-300">
                          <iconify-icon icon="solar:user-rounded-linear" width="120" height="120" class="opacity-50"></iconify-icon>
                     </div>
                 </div>
-                <!-- Floating badge -->
-                <div class="absolute bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg shadow-slate-200/50 border border-slate-100 flex items-center gap-4">
+                <!-- Floating badge: contained on small screens to avoid horizontal scroll -->
+                <div class="absolute bottom-3 left-3 right-3 sm:left-4 sm:right-auto sm:bottom-6 lg:-left-6 lg:bottom-6 lg:right-auto bg-white p-3 sm:p-4 rounded-xl shadow-lg shadow-slate-200/50 border border-slate-100 flex items-center gap-3 sm:gap-4 max-w-[calc(100%-1.5rem)] sm:max-w-none">
                     <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
-                        <iconify-icon icon="solar:heart-pulse-linear" width="24" height="24"></iconify-icon>
+                        <iconify-icon icon="solar:brain-linear" width="24" height="24"></iconify-icon>
                     </div>
                     <div>
-                        <p class="text-sm font-medium text-slate-900">Heart Specialist</p>
-                        <p class="text-xs text-slate-500">Board Certified</p>
+                        <p class="text-sm font-medium text-slate-900">Clinical Psychologist</p>
+                        <p class="text-xs text-slate-500">Licensed · PhD</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-24 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-16 items-start">
-                <div>
-                    <h2 class="text-3xl font-medium tracking-tight text-slate-900 mb-6">About Dr. Sarah Jenkins</h2>
+    <!-- [SITE REGION: ABOUT · BIO + CREDENTIALS + TIMELINE] -->
+    <section id="about" aria-labelledby="about-heading" class="py-12 sm:py-20 lg:py-24 bg-slate-50 scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+                <div class="min-w-0">
+                    <h2 id="about-heading" class="text-2xl sm:text-3xl font-medium tracking-tight text-slate-900 mb-4 sm:mb-6">About Dr. Sarah Jenkins</h2>
                     <p class="text-slate-600 leading-relaxed mb-6 font-normal text-sm sm:text-base">
-                        Dr. Jenkins is a dedicated cardiologist with over 15 years of experience in diagnosing and treating a wide range of cardiovascular conditions. She believes in a holistic approach to heart health, emphasizing preventive care alongside advanced medical interventions.
+                        Dr. Jenkins is a licensed clinical psychologist with over 15 years of experience helping adults and couples navigate anxiety, depression, life transitions, and relationship stress. Her work integrates cognitive-behavioural therapy (CBT), mindfulness-based approaches, and trauma-informed care.
                     </p>
                     <p class="text-slate-600 leading-relaxed mb-8 font-normal text-sm sm:text-base">
-                        Graduating top of her class from Johns Hopkins University, she completed her residency at the Mayo Clinic, focusing on interventional cardiology. Her commitment is to provide clear communication, ensuring every patient understands their condition and treatment options fully.
+                        She earned her PhD in clinical psychology and completed her internship and postdoctoral fellowship at leading university medical centres. She is committed to collaborative, culturally responsive care—meeting you where you are and moving at a pace that feels safe.
                     </p>
                     
                     <div class="space-y-4">
                         <div class="flex items-start gap-4">
-                            <div class="mt-1 w-6 h-6 rounded bg-white border border-slate-200 flex items-center justify-center text-slate-600 shrink-0">
+                            <div class="mt-1 w-6 h-6 rounded bg-white border border-slate-200 flex items-center justify-center text-slate-600 shrink-0" aria-hidden="true">
                                 <iconify-icon icon="solar:diploma-verified-linear" width="16" height="16"></iconify-icon>
                             </div>
                             <div>
-                                <h4 class="text-sm font-medium text-slate-900">Board Certified in Cardiovascular Disease</h4>
-                                <p class="text-xs text-slate-500 mt-1">American Board of Internal Medicine</p>
+                                <h3 class="text-sm font-medium text-slate-900">Licensed Clinical Psychologist</h3>
+                                <p class="text-xs text-slate-500 mt-1">State board · Active license</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
-                            <div class="mt-1 w-6 h-6 rounded bg-white border border-slate-200 flex items-center justify-center text-slate-600 shrink-0">
+                            <div class="mt-1 w-6 h-6 rounded bg-white border border-slate-200 flex items-center justify-center text-slate-600 shrink-0" aria-hidden="true">
                                 <iconify-icon icon="solar:medal-ribbon-linear" width="16" height="16"></iconify-icon>
                             </div>
                             <div>
-                                <h4 class="text-sm font-medium text-slate-900">Fellow of the American College of Cardiology (FACC)</h4>
-                                <p class="text-xs text-slate-500 mt-1">Recognized for excellence in cardiovascular care</p>
+                                <h3 class="text-sm font-medium text-slate-900">APA & professional memberships</h3>
+                                <p class="text-xs text-slate-500 mt-1">Ongoing ethics, training & peer consultation</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
-                    <h3 class="text-xl font-medium tracking-tight text-slate-900 mb-6 flex items-center gap-2">
-                        <iconify-icon icon="solar:history-linear" width="24" height="24" class="text-blue-500"></iconify-icon>
+                <div class="bg-white rounded-2xl p-5 sm:p-8 border border-slate-100 shadow-sm min-w-0">
+                    <h3 id="timeline-heading" class="text-lg sm:text-xl font-medium tracking-tight text-slate-900 mb-4 sm:mb-6 flex items-center gap-2 flex-wrap">
+                        <iconify-icon icon="solar:history-linear" width="24" height="24" class="text-blue-500" aria-hidden="true"></iconify-icon>
                         Professional Journey
                     </h3>
-                    <div class="space-y-6 relative before:absolute before:inset-0 before:ml-2 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-200 before:to-transparent">
-                        
-                        <!-- Timeline Item -->
-                        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                            <div class="flex items-center justify-center w-5 h-5 rounded-full border border-white bg-slate-200 group-[.is-active]:bg-blue-600 text-slate-500 group-[.is-active]:text-blue-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                    <ol class="space-y-6 relative before:absolute before:inset-0 before:ml-2 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-200 before:to-transparent list-none m-0 p-0" aria-labelledby="timeline-heading">
+                        <li class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                            <div class="flex items-center justify-center w-5 h-5 rounded-full border border-white bg-slate-200 group-[.is-active]:bg-blue-600 text-slate-500 group-[.is-active]:text-blue-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10" aria-hidden="true">
                                 <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
                             </div>
                             <div class="w-[calc(100%-2rem)] md:w-[calc(50%-1.5rem)] p-4 rounded-xl border border-slate-100 bg-white shadow-sm">
-                                <div class="flex items-center justify-between mb-1">
-                                    <span class="text-sm font-medium text-slate-900">Senior Cardiologist</span>
-                                    <span class="text-xs text-slate-400 font-medium">2018 - Present</span>
+                                <div class="flex items-center justify-between gap-2 mb-1">
+                                    <h4 class="text-sm font-medium text-slate-900">Private practice · Lead clinician</h4>
+                                    <time class="text-xs text-slate-400 font-medium whitespace-nowrap" datetime="2018">2018 – Present</time>
                                 </div>
-                                <p class="text-xs text-slate-500">City General Hospital</p>
+                                <p class="text-xs text-slate-500">Seattle metro & telehealth</p>
                             </div>
-                        </div>
-
-                         <!-- Timeline Item -->
-                         <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                            <div class="flex items-center justify-center w-5 h-5 rounded-full border border-white bg-slate-200 text-slate-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        </li>
+                        <li class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                            <div class="flex items-center justify-center w-5 h-5 rounded-full border border-white bg-slate-200 text-slate-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10" aria-hidden="true">
                             </div>
                             <div class="w-[calc(100%-2rem)] md:w-[calc(50%-1.5rem)] p-4 rounded-xl border border-slate-100 bg-white shadow-sm">
-                                <div class="flex items-center justify-between mb-1">
-                                    <span class="text-sm font-medium text-slate-900">Cardiology Fellow</span>
-                                    <span class="text-xs text-slate-400 font-medium">2014 - 2018</span>
+                                <div class="flex items-center justify-between gap-2 mb-1">
+                                    <h4 class="text-sm font-medium text-slate-900">Postdoctoral fellowship</h4>
+                                    <span class="text-xs text-slate-400 font-medium whitespace-nowrap"><time datetime="2014">2014</time> – <time datetime="2018">2018</time></span>
                                 </div>
-                                <p class="text-xs text-slate-500">Mayo Clinic</p>
+                                <p class="text-xs text-slate-500">University counselling & mood disorders clinic</p>
                             </div>
-                        </div>
-
-                        <!-- Timeline Item -->
-                        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                            <div class="flex items-center justify-center w-5 h-5 rounded-full border border-white bg-slate-200 text-slate-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        </li>
+                        <li class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                            <div class="flex items-center justify-center w-5 h-5 rounded-full border border-white bg-slate-200 text-slate-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10" aria-hidden="true">
                             </div>
                             <div class="w-[calc(100%-2rem)] md:w-[calc(50%-1.5rem)] p-4 rounded-xl border border-slate-100 bg-white shadow-sm">
-                                <div class="flex items-center justify-between mb-1">
-                                    <span class="text-sm font-medium text-slate-900">Internal Med Residency</span>
-                                    <span class="text-xs text-slate-400 font-medium">2010 - 2014</span>
+                                <div class="flex items-center justify-between gap-2 mb-1">
+                                    <h4 class="text-sm font-medium text-slate-900">Doctoral internship · PhD training</h4>
+                                    <span class="text-xs text-slate-400 font-medium whitespace-nowrap"><time datetime="2010">2010</time> – <time datetime="2014">2014</time></span>
                                 </div>
-                                <p class="text-xs text-slate-500">Johns Hopkins Hospital</p>
+                                <p class="text-xs text-slate-500">APA-accredited clinical program</p>
                             </div>
-                        </div>
-
-                    </div>
+                        </li>
+                    </ol>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-3xl font-medium tracking-tight text-slate-900 mb-4">Comprehensive Cardiac Care</h2>
+    <!-- [SITE REGION: SERVICES · OFFERINGS GRID] -->
+    <section id="services" aria-labelledby="services-heading" class="py-12 sm:py-20 lg:py-24 bg-white scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <header class="text-center max-w-2xl mx-auto mb-10 sm:mb-16 px-1">
+                <h2 id="services-heading" class="text-2xl sm:text-3xl font-medium tracking-tight text-slate-900 mb-3 sm:mb-4">Therapy &amp; support</h2>
                 <p class="text-sm sm:text-base text-slate-500 font-normal">
-                    Providing state-of-the-art diagnostic and therapeutic services tailored to your unique cardiovascular needs.
+                    Evidence-based approaches tailored to your goals—whether you need short-term skills or longer-term depth work.
                 </p>
-            </div>
+            </header>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Service 1 -->
-                <div class="group p-6 rounded-2xl border border-slate-100 hover:border-blue-100 hover:bg-blue-50/30 transition-colors">
-                    <div class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 group-hover:bg-white group-hover:border-blue-100 flex items-center justify-center text-blue-600 mb-6 transition-colors">
-                        <iconify-icon icon="solar:stethoscope-linear" width="24" height="24"></iconify-icon>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                <article class="group p-5 sm:p-6 rounded-2xl border border-slate-100 hover:border-blue-100 hover:bg-blue-50/30 transition-colors min-w-0" aria-labelledby="svc-general">
+                    <div class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 group-hover:bg-white group-hover:border-blue-100 flex items-center justify-center text-blue-600 mb-6 transition-colors" aria-hidden="true">
+                        <iconify-icon icon="solar:chat-round-dots-linear" width="24" height="24"></iconify-icon>
                     </div>
-                    <h3 class="text-lg font-medium text-slate-900 mb-2 tracking-tight">General Cardiology</h3>
+                    <h3 id="svc-general" class="text-lg font-medium text-slate-900 mb-2 tracking-tight">Individual therapy</h3>
                     <p class="text-sm text-slate-500 font-normal leading-relaxed">
-                        Comprehensive evaluation and management of conditions like hypertension, high cholesterol, and general heart health.
+                        One-to-one sessions for anxiety, depression, burnout, self-esteem, grief, and major life changes.
                     </p>
-                </div>
+                </article>
 
-                <!-- Service 2 -->
-                <div class="group p-6 rounded-2xl border border-slate-100 hover:border-blue-100 hover:bg-blue-50/30 transition-colors">
-                    <div class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 group-hover:bg-white group-hover:border-blue-100 flex items-center justify-center text-blue-600 mb-6 transition-colors">
-                        <iconify-icon icon="solar:pulse-linear" width="24" height="24"></iconify-icon>
+                <article class="group p-5 sm:p-6 rounded-2xl border border-slate-100 hover:border-blue-100 hover:bg-blue-50/30 transition-colors min-w-0" aria-labelledby="svc-diagnostics">
+                    <div class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 group-hover:bg-white group-hover:border-blue-100 flex items-center justify-center text-blue-600 mb-6 transition-colors" aria-hidden="true">
+                        <iconify-icon icon="solar:brain-linear" width="24" height="24"></iconify-icon>
                     </div>
-                    <h3 class="text-lg font-medium text-slate-900 mb-2 tracking-tight">Diagnostic Testing</h3>
+                    <h3 id="svc-diagnostics" class="text-lg font-medium text-slate-900 mb-2 tracking-tight">CBT &amp; mindfulness</h3>
                     <p class="text-sm text-slate-500 font-normal leading-relaxed">
-                        Advanced imaging including Echocardiograms, Stress Tests, Holter Monitoring, and EKGs for precise diagnosis.
+                        Structured tools to shift unhelpful thought patterns, regulate emotions, and build sustainable coping skills.
                     </p>
-                </div>
+                </article>
 
-                <!-- Service 3 -->
-                <div class="group p-6 rounded-2xl border border-slate-100 hover:border-blue-100 hover:bg-blue-50/30 transition-colors">
-                    <div class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 group-hover:bg-white group-hover:border-blue-100 flex items-center justify-center text-blue-600 mb-6 transition-colors">
+                <article class="group p-5 sm:p-6 rounded-2xl border border-slate-100 hover:border-blue-100 hover:bg-blue-50/30 transition-colors min-w-0" aria-labelledby="svc-preventive">
+                    <div class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 group-hover:bg-white group-hover:border-blue-100 flex items-center justify-center text-blue-600 mb-6 transition-colors" aria-hidden="true">
                         <iconify-icon icon="solar:shield-check-linear" width="24" height="24"></iconify-icon>
                     </div>
-                    <h3 class="text-lg font-medium text-slate-900 mb-2 tracking-tight">Preventive Care</h3>
+                    <h3 id="svc-preventive" class="text-lg font-medium text-slate-900 mb-2 tracking-tight">Trauma-informed care</h3>
                     <p class="text-sm text-slate-500 font-normal leading-relaxed">
-                        Personalized risk assessments and lifestyle counseling to prevent the onset of cardiovascular disease.
+                        Gentle, safety-first support for past adverse experiences—always at your pace, with clear boundaries.
                     </p>
-                </div>
+                </article>
 
-                <!-- Service 4 -->
-                <div class="group p-6 rounded-2xl border border-slate-100 hover:border-blue-100 hover:bg-blue-50/30 transition-colors">
-                    <div class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 group-hover:bg-white group-hover:border-blue-100 flex items-center justify-center text-blue-600 mb-6 transition-colors">
-                        <iconify-icon icon="solar:heart-angle-linear" width="24" height="24"></iconify-icon>
+                <article class="group p-5 sm:p-6 rounded-2xl border border-slate-100 hover:border-blue-100 hover:bg-blue-50/30 transition-colors min-w-0" aria-labelledby="svc-hf">
+                    <div class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 group-hover:bg-white group-hover:border-blue-100 flex items-center justify-center text-blue-600 mb-6 transition-colors" aria-hidden="true">
+                        <iconify-icon icon="solar:users-group-rounded-linear" width="24" height="24"></iconify-icon>
                     </div>
-                    <h3 class="text-lg font-medium text-slate-900 mb-2 tracking-tight">Heart Failure Management</h3>
+                    <h3 id="svc-hf" class="text-lg font-medium text-slate-900 mb-2 tracking-tight">Couples &amp; relationships</h3>
                     <p class="text-sm text-slate-500 font-normal leading-relaxed">
-                        Ongoing care, medication management, and lifestyle strategies for patients living with congestive heart failure.
+                        Communication, conflict, intimacy, and decision-making—building understanding between partners.
                     </p>
-                </div>
+                </article>
 
-                <!-- Service 5 -->
-                <div class="group p-6 rounded-2xl border border-slate-100 hover:border-blue-100 hover:bg-blue-50/30 transition-colors">
-                    <div class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 group-hover:bg-white group-hover:border-blue-100 flex items-center justify-center text-blue-600 mb-6 transition-colors">
-                        <iconify-icon icon="solar:activity-linear" width="24" height="24"></iconify-icon>
+                <article class="group p-5 sm:p-6 rounded-2xl border border-slate-100 hover:border-blue-100 hover:bg-blue-50/30 transition-colors min-w-0" aria-labelledby="svc-arrhythmia">
+                    <div class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 group-hover:bg-white group-hover:border-blue-100 flex items-center justify-center text-blue-600 mb-6 transition-colors" aria-hidden="true">
+                        <iconify-icon icon="solar:videocamera-record-linear" width="24" height="24"></iconify-icon>
                     </div>
-                    <h3 class="text-lg font-medium text-slate-900 mb-2 tracking-tight">Arrhythmia Care</h3>
+                    <h3 id="svc-arrhythmia" class="text-lg font-medium text-slate-900 mb-2 tracking-tight">Telehealth</h3>
                     <p class="text-sm text-slate-500 font-normal leading-relaxed">
-                        Diagnosis and treatment of irregular heartbeats, including atrial fibrillation, using the latest medical therapies.
+                        Secure video sessions when travel or scheduling makes in-office visits difficult—HIPAA-aligned platform.
                     </p>
-                </div>
+                </article>
 
-                <!-- Service 6 -->
-                <div class="group p-6 rounded-2xl border border-slate-100 hover:border-blue-100 hover:bg-blue-50/30 transition-colors">
-                    <div class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 group-hover:bg-white group-hover:border-blue-100 flex items-center justify-center text-blue-600 mb-6 transition-colors">
-                        <iconify-icon icon="solar:documents-minimalistic-linear" width="24" height="24"></iconify-icon>
+                <article class="group p-5 sm:p-6 rounded-2xl border border-slate-100 hover:border-blue-100 hover:bg-blue-50/30 transition-colors min-w-0" aria-labelledby="svc-second">
+                    <div class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 group-hover:bg-white group-hover:border-blue-100 flex items-center justify-center text-blue-600 mb-6 transition-colors" aria-hidden="true">
+                        <iconify-icon icon="solar:clipboard-list-linear" width="24" height="24"></iconify-icon>
                     </div>
-                    <h3 class="text-lg font-medium text-slate-900 mb-2 tracking-tight">Second Opinions</h3>
+                    <h3 id="svc-second" class="text-lg font-medium text-slate-900 mb-2 tracking-tight">Assessment &amp; consultation</h3>
                     <p class="text-sm text-slate-500 font-normal leading-relaxed">
-                        Thorough review of your medical records and prior test results to provide clarity and alternative treatment options.
+                        Clarifying symptoms, treatment planning, or brief consultations when you are unsure where to start.
                     </p>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section id="testimonials" class="py-24 bg-slate-50 border-y border-slate-100">
-        <div class="max-w-7xl mx-auto px-6">
-             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-                <div>
-                    <h2 class="text-3xl font-medium tracking-tight text-slate-900 mb-2">Patient Stories</h2>
-                    <p class="text-sm text-slate-500 font-normal">Hear from those who have trusted Dr. Jenkins with their care.</p>
+    <!-- [SITE REGION: TESTIMONIALS · SOCIAL PROOF] -->
+    <section id="testimonials" aria-labelledby="testimonials-heading" class="py-12 sm:py-20 lg:py-24 bg-slate-50 border-y border-slate-100 scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+             <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-4 sm:gap-6">
+                <div class="min-w-0">
+                    <h2 id="testimonials-heading" class="text-2xl sm:text-3xl font-medium tracking-tight text-slate-900 mb-2">Client voices</h2>
+                    <p class="text-sm text-slate-500 font-normal">Anonymous feedback from people who have worked with Dr. Jenkins.</p>
                 </div>
-                <div class="flex gap-2">
-                     <button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-slate-900 hover:border-slate-300 transition-colors">
+                <div class="flex gap-2 shrink-0">
+                     <button type="button" class="min-h-[44px] min-w-[44px] rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-slate-900 hover:border-slate-300 active:bg-slate-50 transition-colors" aria-label="Previous testimonials">
                         <iconify-icon icon="solar:arrow-left-linear" width="20" height="20"></iconify-icon>
                      </button>
-                     <button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-900 hover:bg-slate-50 transition-colors">
+                     <button type="button" class="min-h-[44px] min-w-[44px] rounded-full border border-slate-200 flex items-center justify-center text-slate-900 hover:bg-slate-50 active:bg-slate-100 transition-colors" aria-label="Next testimonials">
                         <iconify-icon icon="solar:arrow-right-linear" width="20" height="20"></iconify-icon>
                      </button>
                 </div>
              </div>
 
-             <div class="grid md:grid-cols-3 gap-6">
-                <!-- Review 1 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col h-full">
-                    <div class="text-blue-500 mb-4 opacity-50">
-                        <iconify-icon icon="solar:quote-right-bold" width="32" height="32"></iconify-icon>
-                    </div>
-                    <p class="text-sm text-slate-600 leading-relaxed mb-6 flex-grow">
-                        "Dr. Jenkins is incredibly thorough and truly listens. She explained my condition in a way that finally made sense, and the treatment plan has completely turned my health around. Highly recommend her clinic."
-                    </p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 text-xs font-medium">MR</div>
-                        <div>
-                            <p class="text-sm font-medium text-slate-900">Michael R.</p>
-                            <p class="text-xs text-slate-500">Patient since 2021</p>
+             <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 list-none m-0 p-0">
+                <li class="min-w-0">
+                    <article class="bg-white p-5 sm:p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col h-full" aria-labelledby="review-1-author">
+                        <div class="text-blue-500 mb-4 opacity-50" aria-hidden="true">
+                            <iconify-icon icon="solar:quote-right-bold" width="32" height="32"></iconify-icon>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Review 2 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col h-full">
-                    <div class="text-blue-500 mb-4 opacity-50">
-                        <iconify-icon icon="solar:quote-right-bold" width="32" height="32"></iconify-icon>
-                    </div>
-                    <p class="text-sm text-slate-600 leading-relaxed mb-6 flex-grow">
-                        "I was very anxious about my heart palpitations, but her calm demeanor instantly put me at ease. The tests were run efficiently, and the follow-up was prompt. A genuinely caring professional."
-                    </p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 text-xs font-medium">SL</div>
-                        <div>
-                            <p class="text-sm font-medium text-slate-900">Sarah L.</p>
-                            <p class="text-xs text-slate-500">Preventive Care</p>
+                        <blockquote class="m-0 flex-grow">
+                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                                I finally feel heard. Dr. Jenkins helped me understand my anxiety instead of fighting it blindly. The tools she taught me still help on hard days—I wish I had started sooner.
+                            </p>
+                        </blockquote>
+                        <footer class="flex items-center gap-3 mt-auto">
+                            <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 text-xs font-medium" aria-hidden="true">MR</div>
+                            <div>
+                                <p id="review-1-author" class="text-sm font-medium text-slate-900">Michael R.</p>
+                                <p class="text-xs text-slate-500">Individual therapy</p>
+                            </div>
+                        </footer>
+                    </article>
+                </li>
+                <li class="min-w-0">
+                    <article class="bg-white p-5 sm:p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col h-full" aria-labelledby="review-2-author">
+                        <div class="text-blue-500 mb-4 opacity-50" aria-hidden="true">
+                            <iconify-icon icon="solar:quote-right-bold" width="32" height="32"></iconify-icon>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Review 3 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col h-full hidden md:flex">
-                    <div class="text-blue-500 mb-4 opacity-50">
-                        <iconify-icon icon="solar:quote-right-bold" width="32" height="32"></iconify-icon>
-                    </div>
-                    <p class="text-sm text-slate-600 leading-relaxed mb-6 flex-grow">
-                        "Outstanding care. The clinic staff is wonderful, and Dr. Jenkins never rushes the appointments. It's rare to find a doctor who combines top-tier expertise with such deep empathy for patients."
-                    </p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 text-xs font-medium">DT</div>
-                        <div>
-                            <p class="text-sm font-medium text-slate-900">David T.</p>
-                            <p class="text-xs text-slate-500">Patient since 2019</p>
+                        <blockquote class="m-0 flex-grow">
+                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                                Couples therapy with Dr. Jenkins changed how we argue—we actually listen now. She stayed neutral but didn’t let us avoid the hard topics. Our relationship feels lighter.
+                            </p>
+                        </blockquote>
+                        <footer class="flex items-center gap-3 mt-auto">
+                            <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 text-xs font-medium" aria-hidden="true">SL</div>
+                            <div>
+                                <p id="review-2-author" class="text-sm font-medium text-slate-900">Sarah L.</p>
+                                <p class="text-xs text-slate-500">Couples counselling</p>
+                            </div>
+                        </footer>
+                    </article>
+                </li>
+                <li class="min-w-0 md:col-span-2 lg:col-span-1">
+                    <article class="bg-white p-5 sm:p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col h-full" aria-labelledby="review-3-author">
+                        <div class="text-blue-500 mb-4 opacity-50" aria-hidden="true">
+                            <iconify-icon icon="solar:quote-right-bold" width="32" height="32"></iconify-icon>
                         </div>
-                    </div>
-                </div>
-             </div>
+                        <blockquote class="m-0 flex-grow">
+                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                                Telehealth was seamless, and she never rushed a session. I appreciate the mix of warmth and structure—real expertise without feeling like a case file.
+                            </p>
+                        </blockquote>
+                        <footer class="flex items-center gap-3 mt-auto">
+                            <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 text-xs font-medium" aria-hidden="true">DT</div>
+                            <div>
+                                <p id="review-3-author" class="text-sm font-medium text-slate-900">David T.</p>
+                                <p class="text-xs text-slate-500">Telehealth client</p>
+                            </div>
+                        </footer>
+                    </article>
+                </li>
+             </ul>
         </div>
     </section>
 
-    <!-- Clinic Info & Contact Form -->
-    <section id="clinic" class="py-24 bg-white relative">
-        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-5 gap-16">
+    <!-- [SITE REGION: CLINIC · LOCATION + BOOKING (CONVERSION)] -->
+    <section id="clinic" aria-labelledby="clinic-heading" class="py-12 sm:py-20 lg:py-24 bg-white relative scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-5 gap-10 lg:gap-16">
             
-            <!-- Info -->
-            <div class="lg:col-span-2 space-y-10">
-                <div>
-                    <h2 class="text-3xl font-medium tracking-tight text-slate-900 mb-2">Visit the Clinic</h2>
-                    <p class="text-sm text-slate-500 font-normal">Schedule your consultation today. We are accepting new patients.</p>
-                </div>
+            <aside class="lg:col-span-2 space-y-8 sm:space-y-10 min-w-0">
+                <header>
+                    <h2 id="clinic-heading" class="text-2xl sm:text-3xl font-medium tracking-tight text-slate-900 mb-2">Visit the office</h2>
+                    <p class="text-sm text-slate-500 font-normal">In-person and telehealth appointments. New client inquiries welcome.</p>
+                </header>
 
                 <div class="space-y-6">
-                    <!-- Location -->
-                    <div class="flex gap-4">
-                        <div class="w-10 h-10 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-600 shrink-0">
+                    <section class="flex gap-4" aria-labelledby="clinic-address-heading">
+                        <div class="w-10 h-10 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-600 shrink-0" aria-hidden="true">
                             <iconify-icon icon="solar:map-point-linear" width="20" height="20"></iconify-icon>
                         </div>
                         <div>
-                            <h4 class="text-sm font-medium text-slate-900 mb-1">Clinic Address</h4>
-                            <p class="text-sm text-slate-500 leading-relaxed">
-                                450 Medical Center Blvd,<br>
-                                Suite 302, Heart Wing<br>
+                            <h3 id="clinic-address-heading" class="text-sm font-medium text-slate-900 mb-1">Clinic address</h3>
+                            <address class="text-sm text-slate-500 leading-relaxed not-italic">
+                                450 Wellness Center Blvd,<br>
+                                Suite 302<br>
                                 Seattle, WA 98104
-                            </p>
+                            </address>
                         </div>
-                    </div>
+                    </section>
 
-                    <!-- Timings -->
-                    <div class="flex gap-4">
-                        <div class="w-10 h-10 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-600 shrink-0">
+                    <section class="flex gap-4" aria-labelledby="clinic-hours-heading">
+                        <div class="w-10 h-10 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-600 shrink-0" aria-hidden="true">
                             <iconify-icon icon="solar:clock-circle-linear" width="20" height="20"></iconify-icon>
                         </div>
                         <div>
-                            <h4 class="text-sm font-medium text-slate-900 mb-1">Working Hours</h4>
-                            <div class="text-sm text-slate-500 space-y-1">
-                                <p class="flex justify-between w-48"><span>Mon - Thu:</span> <span>8:00 AM - 5:00 PM</span></p>
-                                <p class="flex justify-between w-48"><span>Friday:</span> <span>8:00 AM - 2:00 PM</span></p>
-                                <p class="flex justify-between w-48 text-slate-400"><span>Sat - Sun:</span> <span>Closed</span></p>
+                            <h3 id="clinic-hours-heading" class="text-sm font-medium text-slate-900 mb-1">Working hours</h3>
+                            <div class="text-sm text-slate-500 space-y-2 max-w-xs sm:max-w-none">
+                                <p class="flex flex-wrap justify-between gap-x-4 gap-y-1"><span>Mon - Thu</span> <span class="text-right shrink-0">8:00 AM - 5:00 PM</span></p>
+                                <p class="flex flex-wrap justify-between gap-x-4 gap-y-1"><span>Friday</span> <span class="text-right shrink-0">8:00 AM - 2:00 PM</span></p>
+                                <p class="flex flex-wrap justify-between gap-x-4 gap-y-1 text-slate-400"><span>Sat - Sun</span> <span class="text-right shrink-0">Closed</span></p>
                             </div>
                         </div>
-                    </div>
+                    </section>
 
-                    <!-- Contact -->
-                    <div class="flex gap-4">
-                        <div class="w-10 h-10 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-600 shrink-0">
+                    <section class="flex gap-4" aria-labelledby="clinic-contact-heading">
+                        <div class="w-10 h-10 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-600 shrink-0" aria-hidden="true">
                             <iconify-icon icon="solar:phone-calling-linear" width="20" height="20"></iconify-icon>
                         </div>
                         <div>
-                            <h4 class="text-sm font-medium text-slate-900 mb-1">Contact Details</h4>
-                            <p class="text-sm text-slate-500 mb-1">+1 (555) 123-4567</p>
-                            <p class="text-sm text-blue-600 hover:underline cursor-pointer">appointments@drjenkins.com</p>
+                            <h3 id="clinic-contact-heading" class="text-sm font-medium text-slate-900 mb-1">Contact</h3>
+                            <p class="text-sm text-slate-500 mb-1">
+                                <a href="tel:+15551234567" class="hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500/30 rounded">+1 (555) 123-4567</a>
+                            </p>
+                            <p class="text-sm">
+                                <a href="mailto:hello@drjenkinspsychology.com" class="text-blue-600 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500/30 rounded">hello@drjenkinspsychology.com</a>
+                            </p>
                         </div>
-                    </div>
+                    </section>
                 </div>
-            </div>
+            </aside>
 
-            <!-- Form -->
-            <div id="appointment" class="lg:col-span-3">
-                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-8 sm:p-10">
-                    <h3 class="text-xl font-medium text-slate-900 mb-6 tracking-tight">Request an Appointment</h3>
-                    <form class="space-y-5">
+            <section id="appointment" class="lg:col-span-3 scroll-mt-20 min-w-0" aria-labelledby="appointment-heading">
+                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-5 sm:p-8 lg:p-10">
+                    <h3 id="appointment-heading" class="text-lg sm:text-xl font-medium text-slate-900 mb-4 sm:mb-6 tracking-tight">Request a session</h3>
+                    <form id="appointmentForm" class="space-y-5" aria-describedby="form-disclaimer">
                         <div class="grid sm:grid-cols-2 gap-5">
                             <div class="space-y-1.5">
                                 <label for="firstName" class="text-xs font-medium text-slate-700">First Name</label>
-                                <input type="text" id="firstName" class="w-full px-3 py-2 text-sm bg-white border border-slate-200 rounded-md text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-shadow" placeholder="Jane">
+                                <input type="text" id="firstName" name="firstName" required autocomplete="given-name" class="w-full px-3 py-3 sm:py-2 text-base sm:text-sm bg-white border border-slate-200 rounded-md text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-shadow min-h-[48px] sm:min-h-0" placeholder="Jane">
                             </div>
                             <div class="space-y-1.5">
                                 <label for="lastName" class="text-xs font-medium text-slate-700">Last Name</label>
-                                <input type="text" id="lastName" class="w-full px-3 py-2 text-sm bg-white border border-slate-200 rounded-md text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-shadow" placeholder="Doe">
+                                <input type="text" id="lastName" name="lastName" required autocomplete="family-name" class="w-full px-3 py-3 sm:py-2 text-base sm:text-sm bg-white border border-slate-200 rounded-md text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-shadow min-h-[48px] sm:min-h-0" placeholder="Doe">
                             </div>
                         </div>
 
                         <div class="grid sm:grid-cols-2 gap-5">
                             <div class="space-y-1.5">
                                 <label for="email" class="text-xs font-medium text-slate-700">Email Address</label>
-                                <input type="email" id="email" class="w-full px-3 py-2 text-sm bg-white border border-slate-200 rounded-md text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-shadow" placeholder="jane@example.com">
+                                <input type="email" id="email" name="email" required autocomplete="email" inputmode="email" class="w-full px-3 py-3 sm:py-2 text-base sm:text-sm bg-white border border-slate-200 rounded-md text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-shadow min-h-[48px] sm:min-h-0" placeholder="jane@example.com">
                             </div>
                             <div class="space-y-1.5">
                                 <label for="phone" class="text-xs font-medium text-slate-700">Phone Number</label>
-                                <input type="tel" id="phone" class="w-full px-3 py-2 text-sm bg-white border border-slate-200 rounded-md text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-shadow" placeholder="(555) 000-0000">
+                                <input type="tel" id="phone" name="phone" required autocomplete="tel" inputmode="tel" class="w-full px-3 py-3 sm:py-2 text-base sm:text-sm bg-white border border-slate-200 rounded-md text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-shadow min-h-[48px] sm:min-h-0" placeholder="(555) 000-0000">
                             </div>
                         </div>
 
                         <div class="space-y-1.5">
-                            <label for="service" class="text-xs font-medium text-slate-700">Reason for Visit</label>
+                            <label for="service" class="text-xs font-medium text-slate-700">Type of support</label>
                             <div class="relative">
-                                <select id="service" class="w-full px-3 py-2 text-sm bg-white border border-slate-200 rounded-md text-slate-900 appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-shadow">
-                                    <option value="" disabled="" selected="">Select a service...</option>
-                                    <option value="general">General Consultation</option>
-                                    <option value="test">Diagnostic Testing</option>
-                                    <option value="followup">Follow-up Visit</option>
+                                <select id="service" name="service" required class="w-full px-3 py-3 sm:py-2 text-base sm:text-sm bg-white border border-slate-200 rounded-md text-slate-900 appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-shadow min-h-[48px] sm:min-h-0">
+                                    <option value="" disabled selected>Select an option...</option>
+                                    <option value="individual">Individual therapy</option>
+                                    <option value="couples">Couples / relationship</option>
+                                    <option value="telehealth">Telehealth intake</option>
+                                    <option value="consult">Brief consultation</option>
                                     <option value="other">Other</option>
                                 </select>
                                 <div class="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none text-slate-400">
@@ -470,45 +583,143 @@
 
                         <div class="space-y-1.5">
                             <label for="message" class="text-xs font-medium text-slate-700">Additional Notes (Optional)</label>
-                            <textarea id="message" rows="3" class="w-full px-3 py-2 text-sm bg-white border border-slate-200 rounded-md text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-shadow resize-none" placeholder="Briefly describe your symptoms or reason for visit."></textarea>
+                            <textarea id="message" name="message" rows="4" class="w-full px-3 py-3 sm:py-2 text-base sm:text-sm bg-white border border-slate-200 rounded-md text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-shadow resize-y min-h-[6rem]" placeholder="Optional: what you are hoping to work on, or preferred times."></textarea>
                         </div>
 
                         <div class="pt-2">
-                            <button type="button" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium text-white bg-slate-900 rounded-md hover:bg-slate-800 transition-colors shadow-sm">
+                            <button type="submit" class="w-full flex items-center justify-center gap-2 px-4 py-3.5 sm:py-2.5 text-sm font-medium text-white bg-slate-900 rounded-md hover:bg-slate-800 active:bg-slate-950 transition-colors shadow-sm min-h-[48px]">
                                 Submit Request
                                 <iconify-icon icon="solar:arrow-right-linear" width="16" height="16"></iconify-icon>
                             </button>
-                            <p class="text-[10px] text-slate-400 text-center mt-3">
-                                Submitting this form does not guarantee an appointment. Our staff will contact you to confirm details.
+                            <p id="form-disclaimer" class="text-[10px] text-slate-400 text-center mt-3">
+                                This form does not create a therapeutic relationship. We will reply with next steps and availability.
                             </p>
                         </div>
                     </form>
                 </div>
-            </div>
+            </section>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-white border-t border-slate-100 py-10">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-            <div class="text-lg font-medium tracking-tighter text-slate-900 flex items-center gap-2">
-                 <div class="w-6 h-6 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-[10px]">
-                    SJ
-                </div>
-                DR.JENKINS
-            </div>
-            
-            <div class="flex gap-6 text-sm text-slate-500 font-normal">
-                <a href="#" class="hover:text-slate-900 transition-colors">Privacy Policy</a>
-                <a href="#" class="hover:text-slate-900 transition-colors">Terms of Service</a>
-                <a href="#" class="hover:text-slate-900 transition-colors">Patient Portal</a>
-            </div>
+    </main>
 
-            <p class="text-xs text-slate-400">
-                © 2023 Dr. Sarah Jenkins. All rights reserved.
-            </p>
+    <!-- [SITE REGION: GLOBAL FOOTER] -->
+    <footer class="bg-white border-t border-slate-100 py-8 sm:py-10 pb-[max(1.5rem,env(safe-area-inset-bottom))]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div class="text-lg font-medium tracking-tighter text-slate-900">DR. JENKINS</div>
+            
+            <nav class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 sm:gap-x-6 text-sm text-slate-500 font-normal" aria-label="Footer">
+                <a href="index.html" class="hover:text-slate-900 transition-colors py-2.5 px-2 -my-1 rounded-md active:bg-slate-50 md:py-0 md:px-0 md:my-0 md:rounded-none md:active:bg-transparent">Practice home</a>
+                <a href="#" class="hover:text-slate-900 transition-colors py-2.5 px-2 -my-1 rounded-md active:bg-slate-50 md:py-0 md:px-0 md:my-0 md:rounded-none md:active:bg-transparent">Privacy Policy</a>
+                <a href="#" class="hover:text-slate-900 transition-colors py-2.5 px-2 -my-1 rounded-md active:bg-slate-50 md:py-0 md:px-0 md:my-0 md:rounded-none md:active:bg-transparent">Terms of Service</a>
+                <a href="#" class="hover:text-slate-900 transition-colors py-2.5 px-2 -my-1 rounded-md active:bg-slate-50 md:py-0 md:px-0 md:my-0 md:rounded-none md:active:bg-transparent">Resources</a>
+            </nav>
+
+            <div class="flex flex-col items-center gap-3 md:items-end">
+                <p class="text-xs text-slate-400 m-0">
+                    © 2026 Dr. Sarah Jenkins, Clinical Psychologist. All rights reserved.
+                </p>
+                <nav class="font-mono text-[10px] uppercase tracking-wider text-slate-400 flex flex-wrap justify-center md:justify-end gap-x-2 gap-y-1 max-w-md md:max-w-none" aria-label="Page structure (footer)">
+                    <a href="#top" class="hover:text-slate-600 focus:outline-none focus:underline">01 Intro</a>
+                    <span aria-hidden="true">·</span>
+                    <a href="#about" class="hover:text-slate-600 focus:outline-none focus:underline">02 About</a>
+                    <span aria-hidden="true">·</span>
+                    <a href="#services" class="hover:text-slate-600 focus:outline-none focus:underline">03 Services</a>
+                    <span aria-hidden="true">·</span>
+                    <a href="#testimonials" class="hover:text-slate-600 focus:outline-none focus:underline">04 Stories</a>
+                    <span aria-hidden="true">·</span>
+                    <a href="#clinic" class="hover:text-slate-600 focus:outline-none focus:underline">05 Office</a>
+                </nav>
+            </div>
         </div>
     </footer>
 
+    <script>
+        (function () {
+            var toggle = document.getElementById('menuToggle');
+            var menu = document.getElementById('mobileMenu');
+            var iconOpen = document.getElementById('menuIconOpen');
+            var iconClose = document.getElementById('menuIconClose');
+
+            function setMenuOpen(open) {
+                if (!menu || !toggle) return;
+                if (open) {
+                    menu.classList.remove('hidden');
+                    toggle.setAttribute('aria-expanded', 'true');
+                    toggle.setAttribute('aria-label', 'Close menu');
+                    if (iconOpen) iconOpen.classList.add('hidden');
+                    if (iconClose) iconClose.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    menu.classList.add('hidden');
+                    toggle.setAttribute('aria-expanded', 'false');
+                    toggle.setAttribute('aria-label', 'Open menu');
+                    if (iconOpen) iconOpen.classList.remove('hidden');
+                    if (iconClose) iconClose.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }
+            }
+
+            if (toggle && menu) {
+                toggle.addEventListener('click', function () {
+                    setMenuOpen(menu.classList.contains('hidden'));
+                });
+                menu.querySelectorAll('.mobile-nav-link').forEach(function (link) {
+                    link.addEventListener('click', function () {
+                        setMenuOpen(false);
+                    });
+                });
+                window.addEventListener('resize', function () {
+                    if (window.matchMedia('(min-width: 768px)').matches) {
+                        setMenuOpen(false);
+                    }
+                });
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape' && menu && !menu.classList.contains('hidden')) {
+                        setMenuOpen(false);
+                        toggle.focus();
+                    }
+                });
+            }
+
+            // WhatsApp: +91999999999 → international digits only (no + or spaces)
+            var WHATSAPP_PHONE = '91999999999';
+
+            var form = document.getElementById('appointmentForm');
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    if (!form.checkValidity()) {
+                        form.reportValidity();
+                        return;
+                    }
+
+                    var firstName = document.getElementById('firstName').value.trim();
+                    var lastName = document.getElementById('lastName').value.trim();
+                    var email = document.getElementById('email').value.trim();
+                    var phone = document.getElementById('phone').value.trim();
+                    var serviceEl = document.getElementById('service');
+                    var serviceLabel = serviceEl.options[serviceEl.selectedIndex].text;
+                    var message = document.getElementById('message').value.trim();
+
+                    var body = [
+                        '*Therapy session request — Dr. Sarah Jenkins (Psychologist)*',
+                        '',
+                        '*Name:* ' + firstName + ' ' + lastName,
+                        '*Email:* ' + email,
+                        '*Phone:* ' + phone,
+                        '*Type of support:* ' + serviceLabel
+                    ];
+                    if (message) {
+                        body.push('*Notes:* ' + message);
+                    }
+
+                    var text = encodeURIComponent(body.join('\n'));
+                    var url = 'https://wa.me/' + WHATSAPP_PHONE + '?text=' + text;
+                    window.open(url, '_blank', 'noopener,noreferrer');
+                });
+            }
+        })();
+    </script>
 
 </body></html>
